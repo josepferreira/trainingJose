@@ -19,4 +19,13 @@ module.exports = async function() {
             product.SALES_PRICE = product.BASE_PRICE * 1.5;
         });
     })
+
+    this.on('teste', async(req) => {
+        console.log("teste");
+        var procedureStart = 'call "training.procedures::TESTE"(';
+        var procedure = procedureStart.concat('P_ID =>\'', req.data.ID, '\')');
+        const tx = cds.transaction(req);
+        tx.run(procedure);
+        return "Success";
+    })
 }

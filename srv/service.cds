@@ -10,4 +10,5 @@ service MyServices {
     entity SalesOrder as projection on salesorder.TBL_SALES_ORDER;
     entity ProductType as projection on products.TBL_PRODUCT_TYPE;
     entity ProductWithType as projection on productviews.ProductWithType;
+    action teste(ID:Integer) returns String;
 }

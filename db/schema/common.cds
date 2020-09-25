@@ -18,3 +18,9 @@ context training.common {
         draft = 'D';
     }
 }
+
+context training.teste {
+    entity TESTE {
+        key ID: Integer;
+    }
+}
