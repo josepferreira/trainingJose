@@ -21,6 +21,7 @@ context training.products {
         PRODUCT_TYPE: Association to TBL_PRODUCT_TYPE;
         STORE: Association to training.stores.TBL_STORES;
         SALES_ORDER: Composition of many training.salesorder.TBL_SALES_ORDER on SALES_ORDER.PRODUCT = $self;
+        ORDER_ITEM: Composition of many training.salesorder.TBL_ORDER_ITEM on ORDER_ITEM.PRODUCT = $self;
 
     }
 

@@ -12,4 +12,19 @@ context training.salesorder {
         STORE: Association to training.stores.TBL_STORES;
         PRODUCT: Association to training.products.TBL_PRODUCTS;
     }
+
+    entity TBL_ORDER {
+        key ID: String(50);
+        VALUE: Decimal;
+        STATUS: training.common.STATUS_TYPE;
+
+        ORDER_ITEM: Composition of many TBL_ORDER_ITEM on ORDER_ITEM.S_ORDER = $self;
+    }
+
+    entity TBL_ORDER_ITEM {
+        key ID: String(50);
+        PRODUCT: Association to training.products.TBL_PRODUCTS;
+        S_ORDER: Association to TBL_ORDER;
+        QUANTITY: Integer;
+    }
 }
